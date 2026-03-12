@@ -1,0 +1,43 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html
+    env_file:
+      - .env
+    depends_on:
+      - mysql
+      - redis
+
+  mysql:
+    image: mysql:8
+    environment:
+      MYSQL_DATABASE: expedientes_app
+      MYSQL_USER: expedientes
+      MYSQL_PASSWORD: expedientes123
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: mysql
+    depends_on:
+      - mysql
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+volumes:
+  mysql_data:

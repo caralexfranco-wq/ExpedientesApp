@@ -1,0 +1,10 @@
+body { background: #f4f6f9; font-family: "Segoe UI", Tahoma, sans-serif; }
+.sidebar { width: 280px; min-height: 100vh; background: #1f2d3d; color: #fff; }
+.sidebar .nav-link, .sidebar .btn { color: #fff; }
+.content { min-height: 100vh; }
+.topbar { position: sticky; top: 0; z-index: 10; }
+.badge.semaforo-verde { background: #198754; }
+.badge.semaforo-amarillo { background: #ffc107; color: #000; }
+.badge.semaforo-rojo { background: #dc3545; }
+.badge.semaforo-gris { background: #6c757d; }
+.table { background: #fff; }
