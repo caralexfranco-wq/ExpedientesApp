@@ -1,0 +1,19 @@
+{
+  "name": "expedientes/app",
+  "description": "Plataforma de gestión jurídica multiempresa",
+  "type": "project",
+  "require": {
+    "php": "^8.2",
+    "phpoffice/phpspreadsheet": "^2.1",
+    "phpoffice/phpword": "^1.2",
+    "phpoffice/phppresentation": "^1.0",
+    "phpmailer/phpmailer": "^6.9",
+    "vlucas/phpdotenv": "^5.6",
+    "predis/predis": "^2.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  }
+}
