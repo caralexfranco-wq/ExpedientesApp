@@ -38,4 +38,8 @@ if ($_SERVER['APP_BASE_PATH'] !== '' && str_starts_with($requestPath, $_SERVER['
     $requestPath = substr($requestPath, strlen($_SERVER['APP_BASE_PATH'])) ?: '/';
 }
 
+if ($requestPath === '/index.php' || $requestPath === '/index.php/') {
+    $requestPath = '/';
+}
+
 $router->dispatch($_SERVER['REQUEST_METHOD'], $requestPath);

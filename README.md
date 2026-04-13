@@ -132,6 +132,8 @@ Y adicionales operativas: DB_PORT, SMTP_PORT, REDIS_HOST, REDIS_PORT, TWILIO_*
 
 - Causa: acceso con subdirectorio (`/ExpedientesApp/public`) y rutas absolutas (`/login`, `/clientes`, etc.).
 - Solución implementada: el front controller ahora detecta automáticamente el `base path` y normaliza rutas/redirects para funcionar tanto en raíz (`http://localhost:8080`) como en subcarpeta (`http://localhost/ExpedientesApp/public`).
+- Se añadió `public/.htaccess` para redirigir rutas amigables a `public/index.php`.
+- En XAMPP debes tener `mod_rewrite` activo y `AllowOverride All` para que funcione el enrutado.
 
 ## 9) Instalación en Docker
 
